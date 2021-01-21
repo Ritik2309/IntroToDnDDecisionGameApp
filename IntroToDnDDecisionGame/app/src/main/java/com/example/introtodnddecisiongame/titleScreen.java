@@ -30,7 +30,6 @@ public class titleScreen extends AppCompatActivity {
     }
 
 
-
     public void startGameScreen(View view){
         Intent classCreation = new Intent(this, classCreation.class);
         startActivity(classCreation);
