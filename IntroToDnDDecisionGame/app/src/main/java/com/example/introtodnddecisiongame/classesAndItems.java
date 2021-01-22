@@ -50,33 +50,38 @@ public class classesAndItems {
 
 
     public static List getUserItems() {
+
+        return userItems;
+    }
+
+    public static void setUserItems(){
         if (getUserClass() == "Warrior"){
             userItems.add("Heavy Leather chestplate");
             userItems.add("old short sword");
-            return userItems;
+
         }
         if (getUserClass() == "Rouge"){
             userItems.add("Light Leather chestplate");
             userItems.add("Two rusty daggers");
-            return userItems;
+
         }
         if (getUserClass() == "Mage"){
             userItems.add("Tattered robes");
             userItems.add("Short wand");
-            return userItems;
+
         }
-        return null;
     }
 
-    public static void addUserItems(String str){
-        userItems.add(str);
-    };
+    public static void addUserItems(String str){ userItems.add(str);
+    }
 
-    public static void setUserClass(String selectedUserClass) {for (int i = 0; i < classesList.size(); i++){
-        if (classesList.contains(selectedUserClass)){
-            userClass = selectedUserClass;
-        }
-    }}
+    public static void setUserClass(String selectedUserClass) {
+        for (int i = 0; i < classesList.size(); i++){
+                if (classesList.contains(selectedUserClass)){
+                    userClass = selectedUserClass;
+                }
+    }
+    }
     public static String getUserClass(){return userClass; }
     public static List getListOfItems() {return listOfItems;}
     public static int[] getItemPrices() {return itemPrices;}

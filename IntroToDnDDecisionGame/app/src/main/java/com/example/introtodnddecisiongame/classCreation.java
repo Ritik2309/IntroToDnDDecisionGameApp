@@ -2,10 +2,9 @@ package com.example.introtodnddecisiongame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -15,15 +14,20 @@ public class classCreation extends AppCompatActivity {
     Button Warrior;
     Button Mage;
     Button Rouge;
-
+    private static final String TAG = "ClassActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_creation);
         Warrior = (Button)findViewById(R.id.warriorBtn);
         Mage = (Button)findViewById(R.id.mageBtn);
         Rouge = (Button)findViewById(R.id.rougeBtn);
+
+        Warrior.setText("Warrior");
+        Mage.setText("Mage");
+        Rouge.setText("Rouge");
 
 
 
@@ -35,9 +39,7 @@ public class classCreation extends AppCompatActivity {
         Warrior.setOnClickListener(new View.OnClickListener() {
             @Override
 
-            public void onClick(View v) {
-                warriorSelected();
-            }
+            public void onClick(View v) { warriorSelected(); }
         });
 
         Mage.setOnClickListener(new View.OnClickListener() {
@@ -55,10 +57,10 @@ public class classCreation extends AppCompatActivity {
     public void warriorSelected() {
 
         classesAndItems.setUserClass("Warrior");
+        classesAndItems.setUserItems();
+
 
         Toast.makeText(getBaseContext(), "Warrior selected!", Toast.LENGTH_SHORT).show();
-
-
 
         Intent attributeSelection = new Intent(this, attributeSelection.class);
         startActivity(attributeSelection);
@@ -67,10 +69,9 @@ public class classCreation extends AppCompatActivity {
     public void mageSelected() {
 
         classesAndItems.setUserClass("Mage");
+        classesAndItems.setUserItems();
 
         Toast.makeText(getBaseContext(), "Mage selected!", Toast.LENGTH_SHORT).show();
-
-
 
         Intent attributeSelection = new Intent(this, attributeSelection.class);
         startActivity(attributeSelection);
@@ -79,10 +80,10 @@ public class classCreation extends AppCompatActivity {
     public void rougeSelected() {
 
         classesAndItems.setUserClass("Rouge");
+        classesAndItems.setUserItems();
+
 
         Toast.makeText(getBaseContext(), "Rouge selected!", Toast.LENGTH_SHORT).show();
-
-
 
         Intent attributeSelection = new Intent(this, attributeSelection.class);
         startActivity(attributeSelection);

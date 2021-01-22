@@ -45,20 +45,18 @@ public class gameScreen extends AppCompatActivity {
 
         DecisionMap perec = new DecisionMap(getCSV());
         navigate(perec);
-
     }
 
     public BufferedReader getCSV(){
+
         InputStream is = getResources().openRawResource(R.raw.data);
         BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
         return reader;
     }
 
     private void navigate(DecisionMap perec) {
-
         DecisionNode node = perec.entryPoint();
         currentNode(node);
-
 
     }
 
@@ -73,30 +71,38 @@ public class gameScreen extends AppCompatActivity {
 
           optionTwo.setVisibility(View.INVISIBLE);
           optionThree.setVisibility(View.INVISIBLE);
+
         if (newNodeDesc == null){nodeDesc.setText(node.getNodeDescription());}
         else nodeDesc.setText(newNodeDesc);
 
-        optionOne.setText(node.getOptionOneQues());
-
-
-        if (node.getOptionTwoQues().equals("-1")){
-            optionTwo.setText("-");
+        if (node.getOptionOneNode().equals("-1")){
+            optionOne.setText(null);
         }
         else{
+            optionOne.setVisibility(View.VISIBLE);
+            optionOne.setText(node.getOptionOneQues());
+        }
+
+        if (node.getOptionTwoQues().equals("-1")){
+            optionTwo.setText(null);
+        }
+        else {
             optionTwo.setVisibility(View.VISIBLE);
             optionTwo.setText(node.getOptionTwoQues());
         }
 
         if (node.getOptionThreeQues().equals("-1")){
-            optionThree.setText("-");
+            optionThree.setText(null);
         }
         else{
             optionThree.setVisibility(View.VISIBLE);
             optionThree.setText(node.getOptionThreeQues());
         }
 
+
+
         optionOne.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            public void onClick(View v){
                 previousNode = node;
                 checkGameProgressionNodeOne(node);
 
@@ -241,6 +247,8 @@ public class gameScreen extends AppCompatActivity {
         else currentNode(optionTHREE(node));
         return null;
     }
+
+
 
 }
 

@@ -1,8 +1,6 @@
 package com.example.introtodnddecisiongame;
 
 
-import android.content.Context;
-import android.content.Intent;
 
 public class gameProgression{
 
@@ -197,7 +195,7 @@ public class gameProgression{
         else if (classesAndItems.getUserClass() == "Mage"){
             rewardItem  = rewards[2];
         }
-        String newNodeDesc = (node.getNodeDescription() + " " + rewardItem +"You graciously accept the gift and let the dwarf know that you hope to revisit him in the future while shaking shake hands. Congratulations! You've reached the end of one path of the intro to DnD decision adventure game, why not start over or go back a decision and head down a different path?");
+        String newNodeDesc = (node.getNodeDescription() + rewardItem + " You graciously accept the gift and let the dwarf know that you hope to revisit him in the future while shaking shake hands. Congratulations! You've reached the end of one path of the intro to DnD decision adventure game, why not start over or go back a decision and head down a different path?");
         return newNodeDesc;
     }
 
@@ -213,7 +211,7 @@ public class gameProgression{
         else if (classesAndItems.getUserClass() == "Mage"){
             rewardItem  = rewards[2];
         }
-        String newNodeDesc = (node.getNodeDescription() + " " + rewardItem +" you manage to finish the remaining two bandits. You both approach the squirming bandit with the injured leg then drag him and tie him as he hurls insults and threats at you. Afterwards, you look through the bandits' loot the elf thanks you and hands 50 gold she uncovered from the bandits stash for helping her clear the trade route for the village. The elf heads off to her village with the bandit that's still breathing while wishing you well in returning to town. Congratulations! You've reached the end of one path of the intro to DnD decision adventure game, why not start over or go back a decision and head down a different path?");
+        String newNodeDesc = (node.getNodeDescription()  + rewardItem +" you manage to finish the remaining two bandits. You both approach the squirming bandit with the injured leg then drag him and tie him as he hurls insults and threats at you. Afterwards, you look through the bandits' loot the elf thanks you and hands 50 gold she uncovered from the bandits stash for helping her clear the trade route for the village. The elf heads off to her village with the bandit that's still breathing while wishing you well in returning to town. Congratulations! You've reached the end of one path of the intro to DnD decision adventure game, why not start over or go back a decision and head down a different path?");
         return newNodeDesc;
     }
 
@@ -229,7 +227,7 @@ public class gameProgression{
         else if (classesAndItems.getUserClass() == "Mage"){
             rewardItem  = rewards[2];
         }
-        String newNodeDesc =  (node.getNodeDescription() + " " + rewardItem + " you manage to finish the remaining two bandits. You both approach the squirming bandit with the injured leg then drag him and tie him as he hurls insults and threats at you. Afterwards, you look through the bandits' loot the elf thanks you and hands 50 gold she uncovered from the bandits stash for helping her clear the trade route for the village. The elf heads off to her village with the bandit that's still breathing while wishing you well in returning to town. Congratulations! You've reached the end of one path of the intro to DnD decision adventure game, why not start over or go back a decision and head down a different path?");
+        String newNodeDesc =  (node.getNodeDescription()  + rewardItem + " you manage to finish the remaining two bandits. You both approach the squirming bandit with the injured leg then drag him and tie him as he hurls insults and threats at you. Afterwards, you look through the bandits' loot the elf thanks you and hands 50 gold she uncovered from the bandits stash for helping her clear the trade route for the village. The elf heads off to her village with the bandit that's still breathing while wishing you well in returning to town. Congratulations! You've reached the end of one path of the intro to DnD decision adventure game, why not start over or go back a decision and head down a different path?");
         return newNodeDesc;
     }
 

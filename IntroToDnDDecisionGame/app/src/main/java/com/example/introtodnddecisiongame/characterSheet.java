@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
-
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.List;
 
 public class characterSheet extends AppCompatActivity {
@@ -30,9 +27,6 @@ public class characterSheet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_sheet);
-
-
-
 
         strenTextView = (TextView)findViewById(R.id.strenText);
         intellTextView = (TextView)findViewById(R.id.intellText);
@@ -64,9 +58,8 @@ public class characterSheet extends AppCompatActivity {
 
 
 
-
-        classTextView.setText(classesAndItems.getUserClass());
         List userItems = classesAndItems.getUserItems();
+        classTextView.setText(classesAndItems.getUserClass());
         String userItemsString = "";
         for (int i = 0 ; i < userItems.size(); i++)
         {
